@@ -30,6 +30,17 @@
   transition: $property $duration $easing $delay;
 }
 
+// --- Scroll Timeline Name v2 Mixin ---
+@mixin scroll-timeline-name-v2($name, $axis: block) {
+  -webkit-scroll-timeline-name: #{$name};
+  scroll-timeline-name: #{$name};
+
+  @if $axis != null {
+    -webkit-scroll-timeline-axis: $axis;
+    scroll-timeline-axis: $axis;
+  }
+}
+
 // --- Named Animation Mixins (ease-kf-* convention) ---
 
 @mixin fade-in($duration: $duration-normal, $easing: $ease-in-out-cubic, $delay: $delay-none, $fill: $fill-both) {
